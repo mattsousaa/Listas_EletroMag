@@ -1,0 +1,449 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{epsfig}
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{fancyheadings}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{enumerate}
+\usepackage{enumitem}   
+\DeclareGraphicsExtensions{.png,.pdf}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{esint}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tasks}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs} % Transformada de Laplace
+\usepackage{indentfirst}
+\usepackage{xcolor}
+
+% As margens
+\setlength{\textheight}{24.0cm}
+\setlength{\textwidth}{17.5cm}
+\setlength{\oddsidemargin}{2.0cm} % Margens reais desejadas
+\setlength{\evensidemargin}{2.0cm} % 2+17.5+1.5=21cm (largura A4)
+\setlength{\topmargin}{1.5cm} % 1.5+1.6+1.0+24.0+1.6=29.7cm
+\setlength{\headheight}{1.6cm} % (altura A4)
+\setlength{\headsep}{1.0cm}
+\setlength{\columnsep}{1.5cm} % Coluna = 8cm ((17.5-1.5)/2)
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\topmargin}{-1in}
+\setlength{\footskip}{0.0cm}
+
+
+% Novos comandos
+\newcommand{\limite}{\displaystyle\lim}
+\newcommand{\integral}{\displaystyle\int}
+\newcommand{\somatorio}{\displaystyle\sum}
+\newcommand{\mat}[1]{\mbox{\boldmath{$#1$}}} 
+
+\pagestyle{fancy}
+
+
+\usepackage{lipsum}
+
+\lhead{
+\includegraphics[width=1cm]{brasao.png}
+}
+
+\rhead{ 
+\sc\textbf{U}niversidade \textbf{F}ederal do \textbf{C}eará\\
+Campus Quixadá\\ Avaliação Parcial 2}
+
+\cfoot{}
+
+\begin{document}
+
+	\begin{center}
+		\Large Corrente elétrica, Campo Magnético, Lei de Ampére, Lei da indução, Circuitos e Materiais Magnéticos. 
+	\end{center}
+
+\begin{flushleft}
+\textbf{Nome:} Mateus Sousa Araújo. \\
+\textbf{Matrícula:} 374858. \\
+\textbf{Professor:} Antônio Joel Ramiro de Castro. \\
+\textbf{Curso:} Engenharia de Computação. \\
+\end{flushleft}
+
+\begin{enumerate}
+
+\item \textbf{Moysés Nussenzveig - Cap. 6 - Problema 1.}
+
+Uma válvula diodo da era pré-transistor contém um par de placas planas paralelas de espaçamento $d$, no vácuo. Estabelece-se entre elas uma diferença de potencial $V$. Um feixe de elétrons com área de seção transversal A e de velocidade inicial $v_0$ é emitido a partir de umadas placas (catodo) e acelerado até a outra (anodo), produzindo uma corrente estacionária de intensidade i. 
+
+\begin{enumerate}
+
+\item Calcule a velocidade $v(x)$ de um elétron à distância $x$ do cátodo.
+\item Calcule a densidade $n(x)$ de elétrons no feixe como função de x. Suponha que $i$ é suficientemente fraco para que o campo gerado pelos elétrons seja desprezível em confronto com o campo acelerador.
+\end{enumerate}
+
+\textbf{RESOLUÇÃO}
+
+\begin{enumerate}
+
+\item 
+
+Podemos considerar inicialmente a 2ª lei de Newton com uma força resultante de natureza elétrica. Esse campo é atuante entre as duas placas paralelas, logo podemos escrever as seguintes relações:
+
+$$F = q E = m a$$ 
+
+$$q V/d = m \displaystyle\dfrac{V^2 - V_0^2}{2x}$$ 
+
+Isolando $V(x)$ temos:
+
+$$V(x) = \left(\displaystyle\dfrac{2qV_x}{mV_0^2d} + 1\right)V_0$$
+
+\item
+
+A densidade de corrente elétrica é dada por:
+
+$$J = n q V$$
+
+Sabemos que $J = i/A$. Substituindo na equação acima, temos:
+
+$$n = \displaystyle\dfrac{J}{q V} = \displaystyle\dfrac{i}{q A V} = \displaystyle\dfrac{i}{e A J_0 } \left(\displaystyle\dfrac{2qV_x}{mV_0^2d} + 1\right)^{-1/2}$$
+\end{enumerate}
+
+
+\item \textbf{Moysés Nussenzveig - Cap. 6 - Problema 4.}
+
+O campo elétrico médio na atmosfera, perto da superfície terrestre, é de 100 $V/m$ dirigido para a Terra. A corrente média de íons que atinge a totalidade da superfície da terra é de 1800 $A$. Supondo que a distribuição da corrente é isotrópica, calcule a condutividade do ar na vizinhança da superfície da Terra.
+
+
+\textbf{RESOLUÇÃO}
+
+Considerando uma distribuição superficial de cargas em termos da densidade de corrente, temos:
+
+$$J = \sigma E$$
+
+Podemos também escrever que a densidade de corrente é:
+
+$$J = i/S$$
+
+Igualando as duas, temos:
+
+$$\sigma E = \displaystyle\dfrac{i}{S} = \displaystyle\dfrac{i}{S E}$$
+
+$$\sigma = \displaystyle\dfrac{1200}{4 \pi (6,37 \cdot 10^6)^2 \ 100}$$
+
+$$\sigma = 3,53 \cdot 10^{-14} \ \Omega \ m^{-1}$$
+
+Substituindo os valores da área de uma esfera e colocando os valores correspondentes temos:
+
+
+\item \textbf{Moysés Nussenzveig - Cap. 7 - Problema 1.}
+
+Uma bússola tende a oscilar antes de alinhar-se com o campo magnético da Terra. Considere uma agulha imantada de momento de dipolo magnético $m$ e momento de inércia $I$, suspensa de forma a poder oscilar livremente em torno de um eixo vertical, situada num campo magnético horizontal uniforme $B_0$. As direções de $m$ e $B_0$ formam inicialmente um pequeno ângulo $\theta_0$. Calcule a frequência angular de oscilação (desprezando o amortecimento) e mostre que sua determinação permite $|m| \cdot |B_0|$.
+
+\textbf{RESOLUÇÃO}
+
+\begin{figure}[h]	
+\centering % para centralizarmos a figura	
+\includegraphics[width=5cm]{Selection_098.jpg} 
+\end{figure}
+
+Podemos generalizar as grandezas dadas no problema e plotar em um plano. As grandezas $m$ e $B_0$ permitem que nós achemos um outro vetor resultante da operação vetorial dos dois. Esse vetor resultante é uma força de tração, que tende a colocar um corpo no seu estado inicial de repouso. Podemos escrever, então:
+
+$$T = m \times B_0 S$$ 
+$$T = m B_0 \sin \theta$$
+
+Para valores pequenos de $\theta$, temos senos pequenos. Isso é muito semelhante a relação da lei de Hooke para fios:
+
+$$T = m B_0 \theta$$
+
+$$T = k\theta$$
+
+A torção $T$ é proporcional ao ângulo dos vetores formados. Podemos considerar um movimento harmônico simples (MHS) com frequência $\omega = 2\pi/T$. Se a aceleração de um sistema massa-mola simples é $\alpha = \omega^2x$, podemos substituir na 2ª lei de Newton:
+
+$$F = m \omega^2 x$$
+
+Como $m$ e $\omega$ são grandezas constantes dentro do MHS, podemos expressar:
+
+$$k = m\omega^2$$
+
+Isolando $\omega$, temos a frequência angular:
+
+$$\omega = \sqrt{\displaystyle\dfrac{k}{m}}$$
+
+Podemos escrever agora que:
+
+$$\omega = \sqrt{\displaystyle\dfrac{m B}{I}}$$
+
+\item \textbf{Moysés Nussenzveig - Cap. 7 - Problema 3.}
+
+\begin{enumerate}
+\item Calcule a frequência angular de rotação de um elétron no campo magnético da terra, numa região em que ele possa ser tratado como uniforme e de intensidade $0,5$ Gauss. 
+\item Para um elétron com energia cinética de 1 $keV$, típica daquela encontrada na aurora boreal, calcule o raio de curvatura nesse campo.
+\end{enumerate}
+
+
+
+\textbf{RESOLUÇÃO}
+
+\begin{enumerate}
+
+\item Podemos igualar a força magnética a força centrípeta. Dessa forma, temos:
+
+$$F_b = qvB = \displaystyle\dfrac{mv^2}{R} = Bq = \displaystyle\dfrac{mv}{R} = m \omega$$
+
+$$\omega = \displaystyle\dfrac{Bq}{m}$$
+
+Transformando o campo magnético de Gauss em Tesla temos $B = 5 \cdot 10^{-5}$ T. Considerando o valor da carga elétrica e a massa de um elétron, temos:
+
+$$\omega = \displaystyle\dfrac{5 \cdot 10^{-5} \ 1,6 \cdot 10^{-19}}{9,1 \cdot 10^{-31}}$$
+
+$$\omega = 8,79 \cdot 10^{6} \ \textrm{rad}$$ 
+
+Calculando a frequência usando o resultado obtido acima, temos:
+
+$$f = \displaystyle\dfrac{\omega}{2\pi} = \displaystyle\dfrac{8,79 \cdot 10^6}{2\pi} = 1,4 \cdot 10^6 \ \textrm{Hz}$$
+
+\item Colocando na relação de energia cinética temos:
+
+$$E = \displaystyle\dfrac{1}{2}\displaystyle\dfrac{m}{v^2}$$
+
+$$v = \sqrt{\displaystyle\dfrac{2E}{m}}$$
+
+$$v = \sqrt{\displaystyle\dfrac{2.1000.1,6 \cdot 10^{-14}}{9,1 \cdot 10^{-31}}} = 18,75 \cdot 10^6 \textrm{m/s}$$
+
+Como temos:
+
+$$r = \displaystyle\dfrac{mv}{qB}$$
+
+Substituindo os valores dados na questão, temos que $r = 2,1$ m.
+
+\end{enumerate}
+
+\item \textbf{Moysés Nussenzveig - Cap. 8 - Problema 4.}
+
+Uma espira quadrada de lado $L$ é percorrida por uma corrente $i$. 
+
+\begin{enumerate}
+\item Determine, em módulo, direção e sentido, o campo $B$ num ponto $P$ situado sobre o eixo da espira (reta perpendicular ao seu plano passando pelo centro $O$ da espira), à distância $z$ de $O$. 
+\item Interprete o resultado obtido para $z >> L$.
+\end{enumerate}
+
+
+\textbf{RESOLUÇÃO}
+
+\begin{enumerate}
+
+\item 
+
+
+\begin{figure}[h]	
+\centering % para centralizarmos a figura	
+\includegraphics[width=5cm]{Selection_099.jpg} 
+\end{figure}
+
+Podemos calcular o campo produzido apenas por um fio e depois multiplicar por 4. Utilizando a lei de Biot-Savart, temos:
+
+$$B = \displaystyle\dfrac{\mu_0 i}{4 \pi} a \displaystyle\int_0^{L/2} \displaystyle\dfrac{dy}{(a^2 + y^2 + z^2)^{3/2}}$$
+
+Resolvendo a integral acima por substituição trigonométrica obtemos:
+
+$$B = \displaystyle\dfrac{\mu_0 i L^2}{2 \pi \left(\displaystyle\dfrac{L^2}{4} + z^2\right)\sqrt{\displaystyle\dfrac{L^2}{2} + z^2}}$$
+
+\item
+
+Para $z >> L$ temos:
+
+$$B = \displaystyle\dfrac{\mu_0 i S}{2 \pi z^3}$$
+
+\end{enumerate}
+
+
+\item \textbf{Moysés Nussenzveig - Cap. 9 - Problema 1.}
+
+O princípio do fluxômetro, empregado para medir a intensidade $B$ de um campo magnético, consiste em empregar uma pequena bobina de prova, com $N$ espiras de área $S$, cujos terminais estão ligados a um galvanômetro balístico. A bobina, cuja resistência é $R$, é colocada com o plano das espiras perpendicular ao campo magnético que se deseja medir, do qual é removida subitamente. Isso gera um pulso de corrente, e o galvanômetro balístico mede a carga total $Q$ associada a este pulso. Calcule o valor de $B$ em função de $N$, $S$, $R$ e $Q$.
+
+\textbf{RESOLUÇÃO}
+
+O fluxo que atravessa uma espira de área $S$ com um campo magnético constante $B$ é dado por:
+
+$$\phi = \displaystyle\oint B \cdot ds = B s$$
+
+Generalizando o resultado para $n$ espiras, temos:
+
+$$\phi = n B s$$
+
+Relacionando o fluxo com a carga $q$ temos:
+
+$$i = \displaystyle\dfrac{1}{R}\displaystyle\dfrac{d\phi}{dt}$$
+
+$$i = \displaystyle\dfrac{dq}{dt} = \displaystyle\dfrac{d\phi}{dt}\displaystyle\dfrac{1}{R}$$
+
+Dessa forma, obtemos:
+
+$$\phi = qR$$
+
+Podemos substituir a relação acima em $\phi = n B s$.
+
+$$\phi = n B s = q R$$
+
+$$B = \displaystyle\dfrac{qR}{NS}$$
+
+
+\item \textbf{Moysés Nussenzveig - Cap. 9 - Problema 2.}
+
+Liga-se um voltímetro entre os trilhos de uma estrada de ferro, cujo espaçamento é de $1,5$ m. Os trilhos são supostos isolados um do outro. A componente vertical do campo magnético terrestre no local é de $0,5$ G. Qual é a leitura do voltímetro quando passa um trem a $150$ km/h?
+
+\textbf{RESOLUÇÃO}
+
+\begin{figure}[h]	
+\centering % para centralizarmos a figura	
+\includegraphics[width=7cm]{Selection_100.jpg} 
+\end{figure}
+
+O fluxo que atravessa o trilho, é dado por:
+
+$$\phi = \displaystyle\oint B \cdot ds $$
+
+Nesse caso o campo é constante e $s$ varia apenas no comprimento. Logo, podemos escrever:
+
+$$\phi = \displaystyle\oint B \cdot ds = B \displaystyle\int_0^x h \ dx = Bhx$$
+
+Esse fluxo pela lei de Faraday, provocará uma força eletromotriz dada por:
+
+$$\varepsilon = -\displaystyle\dfrac{d\phi}{dt} = -\displaystyle\dfrac{d}{dt}(Bhx)$$
+
+Como apenas $B$ e $h$ são fixos então apenas o comprimento varia. Podemos escrever:
+
+$$\varepsilon = -Bhv$$
+
+Substituindo os valores do problema na relação acima obtemos:
+
+$$\varepsilon = 3,13 \cdot 10^{-3} \ \textrm{V}$$
+
+\item \textbf{Moysés Nussenzveig - Cap. 9 - Problema 6.}
+
+Uma espira circular de raio $a$ tem no seu centro uma outra espira circular de raio $b << a$. Os planos das duas espiras formam entre si um ângulo $\theta$. Calcule a indutância mútua entre elas.
+
+\textbf{RESOLUÇÃO}
+
+O fluxo causado entre as espiras, é:
+
+$$\phi_{b,a} = \displaystyle\oint B \cdot ds = \displaystyle\int B ds \cos \theta$$
+
+$$\phi_{b,a} = B \cos \theta \displaystyle\int ds = B \cos \theta \pi b^2$$
+
+Colocando na fórmula do campo em uma espira, temos:
+
+$$B = \displaystyle\dfrac{\mu_0 i}{2a} = \displaystyle\dfrac{\mu_0 i \pi b^2 \cos \theta}{2a}$$
+
+Agora colocando na indutância mútua, obtemos:
+
+$$L = \displaystyle\dfrac{\phi}{i} = \displaystyle\dfrac{\mu_0 \pi b^2 \cos \theta}{2a}$$
+
+\item \textbf{Moysés Nussenzveig - Cap. 10 - Problema 1.}
+
+\begin{figure}[h]	
+\centering % para centralizarmos a figura	
+\includegraphics[width=5cm]{Selection_101.jpg} 
+\end{figure}
+
+No circuito da figura, $R_1 = 20 \Omega$ e $R_2 = 60 \Omega$. Para que valor de R a potência dissipada em R é afetada o mínimo possível por pequenas variações de R?
+
+\textbf{RESOLUÇÃO}
+
+Fazendo as leis das malhas em ambas malhas no circuito temos:
+
+$$
+\begin{cases}
+\varepsilon - 20 i_1 - 60 i_2 = 0 \\
+-60 i_2 + R i_3 = 0 \\
+
+\end{cases}
+$$
+
+Sabemos também que $i_2 = i_1 - i_3$. Substituindo na primeira equação temos:
+
+$$\varepsilon - 20 (i_2 + i_3) - 60 i_2 = 0$$
+
+$$\varepsilon - 80 i_2 - 20 i_3 = 0$$
+
+$$\varepsilon - 80/60 R i_3 - 20 i_3 = 0$$
+
+$$i_3 = \left( 20 + \displaystyle\dfrac{4}{3} R\right) = \varepsilon$$
+
+$$i_3 = \displaystyle\dfrac{\varepsilon}{\left( 20 + \displaystyle\dfrac{4}{3} R\right)}$$
+
+A potência dissipada no resistor vai ser:
+
+$$P = R i_3^2 = \displaystyle\dfrac{R \varepsilon^2}{\left( 20 + \displaystyle\dfrac{4}{3} R\right)^2}$$
+
+Pegando a expressão que obtivemos, basta derivar em relação a R e igualar a zero. 
+
+$$\displaystyle\dfrac{dP}{dR} = 0$$
+
+Fazendo algebrismos, encontramos que a resistência mínima para menor potência no circuito é:
+$$R = 15 \ \Omega$$.
+
+\item \textbf{Moysés Nussenzveig - Cap. 11 - Problema 6.}
+
+No circuito magnético da figura, a secção reta é constante, a permeabilidade magnética do material é $\mu$ e a corrente na bobina de $N$ espiras é $i$. Calcule o campo $B_1$ no braço central e o campo $B_2$ nos demais braços. 
+
+\textbf{RESOLUÇÃO}
+
+Usando a Lei de Ampére e envolvendo um dos braços de um transformador simples de $N$ espiras e com corrente $I$, temos:
+
+$$\displaystyle\oint H \cdot dl = NI$$
+
+Se o campo for constante, temos:
+
+$$H = \displaystyle\dfrac{NI}{L}$$
+
+Basta saber como se comporta $H$ nos braços do transformador e no centro. Para isso, basta saber o fluxo do campo em cada parte. Para o braço esquerdo, temos:
+
+$$H_{esq} = \displaystyle\dfrac{NI}{2a + 2b}$$
+
+Para o braço direito, temos:
+
+$$H_{dir} = \displaystyle\dfrac{NI}{2a + 2b}$$
+
+Para o centro temos:
+
+$$H_{cent} = \displaystyle\dfrac{NI}{b}$$
+
+Agora basta colocar na fórmula $B = \mu H$ para saber o campo. O campo no braço esquerdo é:
+
+$$B_{esq} = \displaystyle\dfrac{\mu NI}{2a + 2b} \ T$$
+
+O campo no braço direito é:
+
+$$B_{dir} = \displaystyle\dfrac{\mu NI}{2a + 2b} \ T$$
+
+O campo no centro é:
+
+$$B_{cent} = \displaystyle\dfrac{\mu NI}{b} \ T$$
+
+\begin{figure}[h]	
+\centering % para centralizarmos a figura	
+\includegraphics[width=6cm]{Selection_102.jpg} 
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+	
+\end{document}
