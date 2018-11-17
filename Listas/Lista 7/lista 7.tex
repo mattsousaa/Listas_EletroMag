@@ -1,0 +1,181 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{epsfig}
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{fancyheadings}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{enumerate}
+\usepackage{enumitem}   
+\DeclareGraphicsExtensions{.png,.pdf}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{esint}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tasks}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs} % Transformada de Laplace
+\usepackage{indentfirst}
+\usepackage{xcolor}
+
+% As margens
+\setlength{\textheight}{24.0cm}
+\setlength{\textwidth}{17.5cm}
+\setlength{\oddsidemargin}{2.0cm} % Margens reais desejadas
+\setlength{\evensidemargin}{2.0cm} % 2+17.5+1.5=21cm (largura A4)
+\setlength{\topmargin}{1.5cm} % 1.5+1.6+1.0+24.0+1.6=29.7cm
+\setlength{\headheight}{1.6cm} % (altura A4)
+\setlength{\headsep}{1.0cm}
+\setlength{\columnsep}{1.5cm} % Coluna = 8cm ((17.5-1.5)/2)
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\topmargin}{-1in}
+\setlength{\footskip}{0.0cm}
+
+
+% Novos comandos
+\newcommand{\limite}{\displaystyle\lim}
+\newcommand{\integral}{\displaystyle\int}
+\newcommand{\somatorio}{\displaystyle\sum}
+\newcommand{\mat}[1]{\mbox{\boldmath{$#1$}}} 
+
+\pagestyle{fancy}
+
+
+\usepackage{lipsum}
+
+\lhead{
+\includegraphics[width=1cm]{brasao.png}
+}
+
+\rhead{ 
+\sc\textbf{U}niversidade \textbf{F}ederal do \textbf{C}eará\\
+Campus Quixadá\\ Lista 7 de Eletromagnetismo}
+
+\cfoot{}
+
+\begin{document}
+
+	\begin{center}
+		\Large Magnetostática - Campo e Força magnética. 
+	\end{center}
+
+\begin{flushleft}
+\textbf{Nome:} Mateus Sousa Araújo. \\
+\textbf{Matrícula:} 374858. \\
+\textbf{Professor:} Antônio Joel Ramiro de Castro. \\
+\textbf{Curso:} Engenharia de Computação. \\
+\end{flushleft}
+
+\begin{enumerate}
+
+\item \textbf{Griffiths - Cap. 5 - Problema 5.3.}
+
+Em 1887 J.J. Thomson 'descobriu' o elétron medindo a razão carga-por-massa de uma partícula de 'raios catódicos' (na realidade, feixe de elétrons, com carga $q$ e massa $m$) como se segue:
+
+\begin{enumerate}
+\item Primeiro ele passou o feixe através de campos cruzados $E$ e $B$ (mutualmente perpendiculares e ambos perpendiculares ao feixe), e foi ajustado o campo elétrico até atingir deflexão zero. Qual seria, então, a velocidade das partículas (em termos de $E$ e $B$)?
+
+\item Ele, então, desligou o campo elétrico e mediu o raio de curvatura, $R$, do feixe, sujeito apenas à deflexão do campo magnético. Em termos de $E$, $B$ e $R$, qual a razão entre carga e massa $(q/m)$ das partículas?
+\end{enumerate}
+
+
+\textbf{RESOLUÇÃO}
+
+\begin{enumerate}
+
+\item 
+
+Usando a equação:
+
+$$F = q[E + (v \times B)] = 0$$
+
+temos que:
+
+$$E = vB$$
+
+A velocidade então é:
+
+$$v = \displaystyle\dfrac{E}{B}$$
+
+\item
+
+Da equação:
+
+$$m v = q B R$$
+
+tiramos:
+
+$$\displaystyle\dfrac{q}{m} = \displaystyle\dfrac{v}{BR}$$
+
+Substituindo o que foi encontrado na letra $(a)$, obtemos:
+
+$$\displaystyle\dfrac{q}{m} = \displaystyle\dfrac{E}{B^2R}$$
+
+\end{enumerate}
+
+
+\item \textbf{Griffiths - Cap. 5 - Problema 5.4.}
+
+
+Suponha que o campo magnético em uma determinada região tem a forma
+
+$$B = kz \ \hat{x}$$
+
+(onde $k$ é uma constante). Encontre a força em um circuito quadrado (de lado $a$), que está no plano $yz$ e centrado na origem, se ele tem uma corrente $I$, que flui no sentido anti-horário quando se olha de cima do eixo $x$.
+
+\textbf{RESOLUÇÃO}
+
+Supondo que a corrente esteja circulando em algum sentido na espira, podemos dizer que as forças magnéticas se cancelam nas pontas. A força acima da espira é:
+
+$$IaB = Iak(a/2) = Ika^2/2$$
+
+A força acima tem sinal positivo, já que a mesma está apontando para cima. A força para baixo é a mesma em módulo. Podemos concluir então que a força total é:
+
+$$F = Ika^2 \ \hat{z}$$
+
+
+\item \textbf{Griffiths - Cap.5 - Problema 5.5.}
+
+Uma corrente $I$ flui por um fio de raio $a$.
+
+\begin{enumerate}
+\item Se ela estiver distribuída uniformemente sobre a superfície, qual é a densidade superficial de corrente $K$?
+\item Se ela estiver distribuída de forma que a corrente volumétrica seja inversamente proporcional à distância do eixo, quanto vale $J$?
+\end{enumerate}
+
+\textbf{RESOLUÇÃO}
+
+\begin{enumerate}
+
+\item
+
+$$K = \displaystyle\dfrac{I}{2\pi a}$$
+
+\item
+
+Pela relação:
+
+$$\displaystyle\dfrac{\alpha}{s}$$
+
+temos que a corrente $I$ é:
+
+$$I = \displaystyle\int J \ da = \alpha \displaystyle\int \displaystyle\dfrac{1}{s} \ ds \ d\phi = 2\pi \alpha \displaystyle\int ds = 2 \pi a \alpha$$
+
+Isolando $\alpha$, temos:
+
+$$\alpha = \displaystyle\dfrac{I}{2\pi a}$$
+
+Logo, $J$ é:
+
+$$J = \displaystyle\dfrac{I}{2\pi a}$$
+
+\end{enumerate}
+
+
+\end{enumerate}
+	
+\end{document}
